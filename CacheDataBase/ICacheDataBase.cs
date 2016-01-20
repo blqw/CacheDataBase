@@ -6,13 +6,14 @@ using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace blqw
+namespace blqw.Caching
 {
     /// <summary>
     /// 缓存数据库接口
     /// </summary>
     /// <typeparam name="T"></typeparam>
     interface ICacheDataBase<T>
+        where T : class
     {
         /// <summary>
         /// 缓存对象
@@ -23,14 +24,14 @@ namespace blqw
         /// </summary>
         string[] PrimaryKeyFields { get; }
         /// <summary>
-        /// 唯一键
+        /// 辅助键
         /// </summary>
-        string[] UniqueKeyFields { get; }
+        string[] BindKeyFields { get; }
 
         /// <summary>
         /// 有效时间
         /// </summary>
-        TimeSpan ExpirationTime { get; }
+        TimeSpan ExpirationTime { get; set; }
 
         /// <summary>
         /// 添加缓存
@@ -51,9 +52,9 @@ namespace blqw
         /// <summary>
         /// 移除缓存
         /// </summary>
-        /// <param name="uniqueKeyField">缓存唯一字段</param>
-        /// <param name="uniqueValue">唯一字段的值</param>
-        void Remove(Expression<Func<T, object>> uniqueKeyField, object uniqueValue);
+        /// <param name="uniqueKeyField">辅助键字段</param>
+        /// <param name="value">辅助键的值</param>
+        void Remove<R>(Expression<Func<T, R>> bindKeyField, R value);
 
         /// <summary>
         /// 获取缓存
@@ -70,9 +71,9 @@ namespace blqw
         /// <summary>
         /// 获取缓存
         /// </summary>
-        /// <param name="uniqueKeyField">缓存唯一字段</param>
-        /// <param name="uniqueValue">唯一字段的值</param>
+        /// <param name="uniqueKeyField">辅助键字段</param>
+        /// <param name="value">辅助键的值</param>
         /// <returns></returns>
-        T Get(Expression<Func<T, object>> uniqueKeyField, object uniqueValue);
+        T Get<R>(Expression<Func<T, R>> bindKeyField, R value);
     }
 }
