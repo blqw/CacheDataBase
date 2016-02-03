@@ -10,12 +10,12 @@ using System.Reflection;
 
 namespace blqw.Caching
 {
-    public class CacheDataBase<T> : ICacheDataBase<T>
+    public class CacheStore<T> : ICacheStore<T>
         where T : class
     {
         #region 静态内容
-        static CacheDataBase<T> _Instance;
-        public static CacheDataBase<T> Instance
+        static CacheStore<T> _Instance;
+        public static CacheStore<T> Instance
         {
             get
             {
@@ -23,9 +23,9 @@ namespace blqw.Caching
                 {
                     return _Instance;
                 }
-                System.Threading.Interlocked.CompareExchange(ref _Instance, new CacheDataBase<T>(), null);
+                System.Threading.Interlocked.CompareExchange(ref _Instance, new CacheStore<T>(), null);
                 return _Instance;
-                //= new CacheDataBase<T>()
+                //= new CacheStore<T>()
             }
         }
         private readonly static string[] _PrimaryKeyFields = GetPrimaryKeyFields();
@@ -125,7 +125,7 @@ namespace blqw.Caching
 
         #endregion
 
-        protected CacheDataBase()
+        protected CacheStore()
         {
             Cache = new MemoryCache(Guid.NewGuid().ToString());
             ExpirationTime = new TimeSpan(1, 0, 0);

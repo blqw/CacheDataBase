@@ -18,7 +18,7 @@ namespace Demo
             var user4 = new User { ID = 4, Name = "blqw", LoginName = "blqw4" };
             var user5 = new User { ID = 5, Name = "blqw", LoginName = "blqw5" };
 
-            var db = CacheDataBase<User>.Instance;
+            var db = CacheStore<User>.Instance;
             db.Add(user1);
             db.Add(user2);
             db.Add(user3);

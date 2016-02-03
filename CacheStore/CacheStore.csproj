@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>blqw.Caching</RootNamespace>
-    <AssemblyName>CacheDataBase</AssemblyName>
+    <AssemblyName>CacheStore</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,8 +44,8 @@
     <Compile Include="Attributes\BindKey.cs" />
     <Compile Include="Attributes\CacheKey.cs" />
     <Compile Include="Attributes\CacheTable.cs" />
-    <Compile Include="CacheDataBase.cs" />
-    <Compile Include="ICacheDataBase.cs" />
+    <Compile Include="CacheStore.cs" />
+    <Compile Include="ICacheStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

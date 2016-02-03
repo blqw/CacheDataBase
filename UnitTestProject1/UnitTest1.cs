@@ -25,7 +25,7 @@ namespace UnitTestProject1
             var user3 = new User { ID = 3, Name = "blqw", LoginName = "blqw3" };
             var user4 = new User { ID = 4, Name = "blqw", LoginName = "blqw4" };
 
-            var db = CacheDataBase<User>.Instance;
+            var db = CacheStore<User>.Instance;
             db.Add(user1);
             db.Add(user2);
             db.Add(user3);

@@ -12,7 +12,7 @@ namespace blqw.Caching
     /// 缓存数据库接口
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    interface ICacheDataBase<T>
+    interface ICacheStore<T>
         where T : class
     {
         /// <summary>

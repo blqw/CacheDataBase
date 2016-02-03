@@ -57,9 +57,9 @@
     <Compile Include="UnitTest2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CacheDataBase\CacheDataBase.csproj">
+    <ProjectReference Include="..\CacheStore\CacheStore.csproj">
       <Project>{0a8228f4-603f-4ba0-beef-92ee371311e0}</Project>
-      <Name>CacheDataBase</Name>
+      <Name>CacheStore</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
