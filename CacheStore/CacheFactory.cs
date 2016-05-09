@@ -104,10 +104,6 @@ namespace blqw.Caching
         public static ICacheStore<T> CreateStore<T>(ObjectCache cacheProvider)
             where T : class
         {
-            if (cacheProvider == null)
-            {
-                throw new ArgumentNullException(nameof(cacheProvider));
-            }
             return new CacheStore<T>(cacheProvider);
         }
         

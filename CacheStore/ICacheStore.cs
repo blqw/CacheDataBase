@@ -18,7 +18,7 @@ namespace blqw.Caching
         /// <summary>
         /// 缓存提供程序
         /// </summary>
-        ObjectCache Cache { get; }
+        ObjectCache Provider { get; }
 
         /// <summary>
         /// 主键或联合主键

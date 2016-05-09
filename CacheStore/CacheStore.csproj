@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\BindKey.cs" />
+    <Compile Include="Attributes\CacheUniqueKey.cs" />
     <Compile Include="Attributes\CacheKey.cs" />
     <Compile Include="Attributes\CacheTable.cs" />
+    <Compile Include="CacheFactory.cs" />
+    <None Include="CacheStore.old" />
     <Compile Include="CacheStore.cs" />
     <Compile Include="ICacheStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
