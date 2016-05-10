@@ -23,11 +23,15 @@ namespace blqw.Caching
         /// <summary>
         /// 主键或联合主键
         /// </summary>
-        string[] PrimaryKeyFields { get; }
+        string[] PrimaryKeys { get; }
         /// <summary>
         /// 辅助键
         /// </summary>
-        string[] UniqueKeyFields { get; }
+        string[] UniqueKeys { get; }
+        /// <summary>
+        /// 缓存表名
+        /// </summary>
+        string TableName { get; }
 
         /// <summary>
         /// 过期时间
